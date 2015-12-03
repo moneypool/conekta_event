@@ -1,0 +1,8 @@
+{
+    "object": "error",
+    "type": null,
+    "message": "The model Event 5658c1be19ce88e701000220 could not be found.",
+    "message_to_purchaser": "The resource was not found.",
+    "param": null,
+    "code": null
+}

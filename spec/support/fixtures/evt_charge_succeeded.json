@@ -1,0 +1,53 @@
+{
+  "id": "evt_charge_succeeded",
+  "created_at": 1448657482,
+  "livemode": false,
+  "type": "charge.paid",
+  "webhook_status": "pending",
+  "object": "event",
+  "webhook_logs": [
+    {
+      "id": "webhl_aBqKpPTKFAr4WDe",
+      "url": "https://afveyfzbft.localtunnel.me/payments/conekta_webhook",
+      "failed_attempts": 1,
+      "last_http_response_status": -1,
+      "object": "webhook_log",
+      "last_attempted_at": 1448657334
+    }
+  ],
+  "data": {
+    "object": {
+      "id": "563d04cc241229543d000221",
+      "livemode": false,
+      "created_at": 1448657342,
+      "status": "paid",
+      "currency": "MXN",
+      "description": "Pool 4904 | Imagen Grande",
+      "reference_id": "4904",
+      "failure_code": null,
+      "failure_message": null,
+      "monthly_installments": null,
+      "object": "charge",
+      "amount": 30000,
+      "paid_at": 1448657481,
+      "fee": 1218,
+      "customer_id": "",
+      "refunds": null,
+      "payment_method": {"expiry_date": "271215",
+      "barcode": "12345678901234567890123456789012",
+      "barcode_url": "http://s3.amazonaws.com/cash_payment_barcodes/12345678901234567890123456789012.png",
+      "object": "cash_payment",
+      "type": "oxxo",
+      "expires_at": 1451174400},
+      "details": {
+        "name": "Gerardo Acuña",
+        "phone": null,
+        "email": "gerardoacuna@gmail.com",
+        "line_items": null
+      }
+    },
+    "previous_attributes": {
+      "status": "pending_payment"
+    }
+  }
+}
