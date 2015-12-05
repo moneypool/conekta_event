@@ -84,7 +84,7 @@ To prevent this, ConektaEvent supports using HTTP Basic authentication on your w
     # CONEKTA_WEBHOOK_SECRET environment variable
     ConektaEvent.authentication_secret = ENV['CONEKTA_WEBHOOK_SECRET']
     # conekta_webhook_secret key in secrets.yml file
-    ConektaEvent.authentication_secret = Rails.application.secrets.stripe_webhook_secret
+    ConektaEvent.authentication_secret = Rails.application.secrets.conekta_webhook_secret
     ```
 
 3. When you specify your webhook's URL in Conekta's settings, include the secret as a password in the URL, along with any username:
@@ -112,7 +112,7 @@ class EventRetriever
     Conekta::Event.find(params[:id], api_key)
   end
 
-  def retrieve_api_key(stripe_user_id)
+  def retrieve_api_key(conekta_user_id)
     Account.find_by!(conekta_user_id: conekta_user_id).api_key
   rescue ActiveRecord::RecordNotFound
     # whoops something went wrong - error handling
@@ -148,7 +148,7 @@ require 'json'
 require 'sinatra'
 require 'conekta_event'
 
-Conekta.api_key = ENV['STRIPE_SECRET_KEY']
+Conekta.api_key = ENV['CONEKTA_SECRET_KEY']
 
 ConektaEvent.subscribe 'charge.paid' do |event|
   # Look ma, no Rails!
@@ -194,5 +194,5 @@ Semantic Versioning 2.0 as defined at <http://semver.org>.
 
 ### License
 
-[MIT License](https://github.com/integrallis/stripe_event/blob/master/LICENSE.md).
+[MIT License](https://github.com/moneypool/conekta_event/blob/master/MIT-LICENSE).
 Copyright 2015 Moneypool SAPI de CV.
